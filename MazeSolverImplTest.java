@@ -2,6 +2,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class MazeSolverImplTest {
 
@@ -74,4 +77,49 @@ public class MazeSolverImplTest {
 
     // TODO: Add your tests here!
 
+    @Test
+    public void testIncrement() {
+        Coordinate x = new Coordinate(0, 0);
+        Coordinate y = MazeSolverImpl.increment(x, 1,1);
+        assertEquals(y.getX(), 1);
+        assertEquals(y.getY(), 1);
+        y = MazeSolverImpl.increment(y, -2, -2);
+        assertEquals(y.getX(), -1);
+        assertEquals(y.getY(), -1);
+    }
+
+    @Test
+    public void testBounds() {
+        Coordinate a = new Coordinate(0, 1);
+        Coordinate x = new Coordinate(0, 0);
+        Coordinate y = new Coordinate(-1, -1);
+        Coordinate z = new Coordinate(10000, 10000);
+        assertTrue(MazeSolverImpl.withinBounds(smallWriteupMaze, x));
+        assertFalse(MazeSolverImpl.withinBounds(smallWriteupMaze, a));
+        assertFalse(MazeSolverImpl.withinBounds(smallWriteupMaze, y));
+        assertFalse(MazeSolverImpl.withinBounds(smallWriteupMaze, z));
+    }
+
+    @Test
+    public void testExceptions() {
+        Coordinate a = new Coordinate(0, 0);
+        Coordinate b = new Coordinate(0, 1);
+        int[][] m1 = new int[1][1];
+        assertFalse(MazeSolverImpl.checkExceptions(null, a));
+        assertFalse(MazeSolverImpl.checkExceptions(smallWriteupMaze, b));
+        assertFalse(MazeSolverImpl.checkExceptions(m1, a));
+        assertTrue(MazeSolverImpl.checkExceptions(smallWriteupMaze, a));
+    }
+
+    @Test
+    public void testFindSolution() {
+
+    }
+
+    @Test
+    public void testSolveMaze() {
+        Coordinate start = new Coordinate(0, 0);
+        Coordinate end = new Coordinate(3, 3);
+        MazeSolverImpl.solveMaze(smallWriteupMaze, start, end);
+    }
 }

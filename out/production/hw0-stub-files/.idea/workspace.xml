@@ -1,60 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ChangeListManager">
-    <list default="true" id="6df1af0d-7ad8-48e0-9a38-f7c401d3f6b2" name="Default Changelist" comment="" />
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1WRuqhxcfMD7tBs1eUWzjLRcdBY" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
+  <component name="ProjectId" id="1WUWH2s3DOd1d9QeXNu1VB6G6Qt" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Android JUnit.CoordinateTest">
-    <configuration name="CoordinateTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hw0-stub-files" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CoordinateTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MazeSolverImplTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="MazeSolverImplTest.testIncrement" type="AndroidJUnit" temporary="true" nameIsGenerated="true">
       <module name="hw0-stub-files" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MazeSolverImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MazeSolverImplTest.testReturnsBigMazeSolutionPathInWriteup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hw0-stub-files" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MazeSolverImplTest" />
-      <option name="METHOD_NAME" value="testReturnsBigMazeSolutionPathInWriteup" />
+      <option name="METHOD_NAME" value="testIncrement" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -62,74 +25,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Android JUnit.CoordinateTest" />
-        <item itemvalue="JUnit.MazeSolverImplTest.testReturnsBigMazeSolutionPathInWriteup" />
-        <item itemvalue="Android JUnit.MazeSolverImplTest" />
+        <item itemvalue="Android JUnit.MazeSolverImplTest.testIncrement" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="6df1af0d-7ad8-48e0-9a38-f7c401d3f6b2" name="Default Changelist" comment="" />
-      <created>1579124921501</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1579124921501</updated>
-      <workItem from="1579124925048" duration="1416000" />
-      <workItem from="1579131059208" duration="17000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579126001688">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579126001688" />
-    <state width="1340" height="266" key="GridCell.Tab.0.bottom" timestamp="1579126074286">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1340" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579126074286" />
-    <state width="1340" height="266" key="GridCell.Tab.0.center" timestamp="1579126074285">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1340" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579126074285" />
-    <state width="1340" height="266" key="GridCell.Tab.0.left" timestamp="1579126074285">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1340" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579126074285" />
-    <state width="1340" height="266" key="GridCell.Tab.0.right" timestamp="1579126074286">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1340" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579126074286" />
-    <state x="370" y="300" key="SettingsEditor" timestamp="1579131073455">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="370" y="300" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1579131073455" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1579124933801">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579124933801" />
-    <state x="664" y="414" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1579126017827">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="664" y="414" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1579126017827" />
   </component>
 </project>

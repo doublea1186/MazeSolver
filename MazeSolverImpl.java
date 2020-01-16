@@ -22,14 +22,16 @@ public class MazeSolverImpl {
      */
     public static int[][] solveMaze(int[][] maze, Coordinate sourceCoord, Coordinate goalCoord) {
         // TODO: implements
-        int rows = maze[0].length;
-        int columns = maze.length;
-        int[][] solution = new int[rows][columns];
 
-        if (checkExceptions(maze, sourceCoord) || checkExceptions(maze, goalCoord)) {
-            throw new IllegalArgumentException();
+        if (!checkExceptions(maze, sourceCoord) && !checkExceptions(maze, goalCoord)) {
+            System.out.println(checkExceptions(maze, goalCoord));
+            // throw new IllegalArgumentException();
         } else {
-            if (findSolution(maze, sourceCoord, goalCoord)) {
+            int rows = maze[0].length;
+            int columns = maze.length;
+            int[][] solution = new int[rows][columns];
+
+            if (findSolution(maze, sourceCoord, goalCoord, solution)) {
 
             }
         }
@@ -37,7 +39,8 @@ public class MazeSolverImpl {
         return null;
     }
 
-    public static boolean findSolution(int[][] maze, Coordinate current, Coordinate end) {
+    public static boolean findSolution(int[][] maze, Coordinate current, Coordinate end, int[][] path) {
+        path[current.getY()][current.getX()] = 1;
         if (current.equals(end)) {
             return true;
         } else if (withinBounds(maze, increment(current, 0, -1))) {
@@ -53,10 +56,8 @@ public class MazeSolverImpl {
     }
 
     public static boolean checkExceptions(int[][] maze, Coordinate x) {
-        int rows = maze[0].length;
-        int columns = maze.length;
 
-        if (maze == null || rows <= 1 || columns <= 1 || !withinBounds(maze, x)) {
+        if (maze == null || maze[0].length * maze.length <= 1 || !withinBounds(maze, x)) {
             return false;
         }
 
@@ -67,15 +68,10 @@ public class MazeSolverImpl {
         int x = point.getX();
         int y = point.getY();
 
-        if (maze[y][x] == 1 || x < 0 || y < 0 || maze[0].length < y || maze.length < x) {
-            return false;
-        }
-
-        return true;
+        return x >= 0 && y >= 0 && maze[0].length >= y && maze.length >= x && maze[y][x] != 1;
     }
 
     public static Coordinate increment(Coordinate point, int x, int y) {
-
         return new Coordinate(point.getX() + x, point.getY() + y);
     }
 }
