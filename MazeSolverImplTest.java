@@ -1,15 +1,15 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 public class MazeSolverImplTest {
 
     private int[][] smallWriteupMaze;
     private int[][] bigWriteupMaze;
+    private int[][] closedMaze;
+    private int[][] openMaze;
+    private int[][] mediumMaze;
 
     @Before
     public void setupTestMazes() {
@@ -18,6 +18,31 @@ public class MazeSolverImplTest {
                 {1, 1, 0, 0},
                 {0, 0, 0, 1},
                 {0, 0, 1, 0}
+        };
+
+        closedMaze = new int[][]{
+                {1, 1, 1, 1},
+                {1, 1, 1, 1},
+                {1, 1, 1, 1},
+                {1, 1, 1, 1}
+        };
+
+        openMaze = new int[][]{
+                {0, 0, 0, 0},
+                {0, 0, 0, 0},
+                {0, 0, 0, 0},
+                {0, 0, 0, 0}
+        };
+
+        mediumMaze = new int[][]{
+                {1, 0, 1, 0},
+                {0, 0, 0, 0},
+                {1, 1, 0, 1},
+                {1, 1, 0, 0},
+                {0, 0, 0, 1},
+                {1, 0, 1, 1},
+                {0, 0, 1, 1},
+                {0, 1, 1, 1}
         };
 
         bigWriteupMaze = new int[][]{
@@ -75,12 +100,10 @@ public class MazeSolverImplTest {
       https://www.seas.upenn.edu/~cis121/current/testing_guide.html
      */
 
-    // TODO: Add your tests here!
-
     @Test
     public void testIncrement() {
         Coordinate x = new Coordinate(0, 0);
-        Coordinate y = MazeSolverImpl.increment(x, 1,1);
+        Coordinate y = MazeSolverImpl.increment(x, 1, 1);
         assertEquals(y.getX(), 1);
         assertEquals(y.getY(), 1);
         y = MazeSolverImpl.increment(y, -2, -2);
@@ -94,10 +117,10 @@ public class MazeSolverImplTest {
         Coordinate x = new Coordinate(0, 0);
         Coordinate y = new Coordinate(-1, -1);
         Coordinate z = new Coordinate(10000, 10000);
-        assertTrue(MazeSolverImpl.withinBounds(smallWriteupMaze, x));
-        assertFalse(MazeSolverImpl.withinBounds(smallWriteupMaze, a));
-        assertFalse(MazeSolverImpl.withinBounds(smallWriteupMaze, y));
-        assertFalse(MazeSolverImpl.withinBounds(smallWriteupMaze, z));
+        assertTrue(MazeSolverImpl.checkExceptions(smallWriteupMaze, x));
+        assertFalse(MazeSolverImpl.checkExceptions(smallWriteupMaze, a));
+        assertFalse(MazeSolverImpl.checkExceptions(smallWriteupMaze, y));
+        assertFalse(MazeSolverImpl.checkExceptions(smallWriteupMaze, z));
     }
 
     @Test
@@ -113,13 +136,207 @@ public class MazeSolverImplTest {
 
     @Test
     public void testFindSolution() {
+        int[][] empty = new int[4][4];
+        Coordinate x = new Coordinate(3, 3);
+        Coordinate y = new Coordinate(0, 0);
 
+        assertFalse(MazeSolverImpl.findSolution(smallWriteupMaze, x, y, empty));
+        assertFalse(MazeSolverImpl.findSolution(smallWriteupMaze, y, x, empty));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testThrownExceptions() {
+        int[][] maze = new int[1][1];
+        Coordinate x = new Coordinate(-1, -1);
+
+        MazeSolverImpl.solveMaze(maze, x, x);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testNullInput() {
+        Coordinate x = new Coordinate(0, 0);
+
+        MazeSolverImpl.solveMaze(null, x, x);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testEmpty() {
+        int[][] maze = new int[0][0];
+        Coordinate x = new Coordinate(0, 0);
+
+        MazeSolverImpl.solveMaze(maze, x, x);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSourceYNegativeBounds() {
+        Coordinate source = new Coordinate(0, -1);
+        Coordinate goal = new Coordinate(0, 0);
+        MazeSolverImpl.solveMaze(openMaze, source, goal);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSourceYPositiveBounds() {
+        Coordinate source = new Coordinate(0, 100);
+        Coordinate goal = new Coordinate(0, 0);
+        MazeSolverImpl.solveMaze(openMaze, source, goal);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSourceXNegativeBounds() {
+        Coordinate source = new Coordinate(-1, 0);
+        Coordinate goal = new Coordinate(0, 0);
+        MazeSolverImpl.solveMaze(openMaze, source, goal);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSourceXPositiveBounds() {
+        Coordinate source = new Coordinate(100, 0);
+        Coordinate goal = new Coordinate(0, 0);
+        MazeSolverImpl.solveMaze(openMaze, source, goal);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGoalYNegativeBounds() {
+        Coordinate source = new Coordinate(0, 0);
+        Coordinate goal = new Coordinate(0, -1);
+        MazeSolverImpl.solveMaze(openMaze, source, goal);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGoalYPositiveBounds() {
+        Coordinate source = new Coordinate(0, 0);
+        Coordinate goal = new Coordinate(0, 100);
+        MazeSolverImpl.solveMaze(openMaze, source, goal);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGoalXNegativeBounds() {
+        Coordinate source = new Coordinate(0, 0);
+        Coordinate goal = new Coordinate(-1, 0);
+        MazeSolverImpl.solveMaze(openMaze, source, goal);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGoalXPositiveBounds() {
+        Coordinate source = new Coordinate(100, 0);
+        Coordinate goal = new Coordinate(100, 0);
+        MazeSolverImpl.solveMaze(openMaze, source, goal);
+    }
+
+    @Test
+    public void noPaths() {
+        closedMaze[0][0] = 0;
+        closedMaze[3][3] = 0;
+        Coordinate x = new Coordinate(0, 0);
+        Coordinate y = new Coordinate(3, 3);
+        assertNull(MazeSolverImpl.solveMaze(closedMaze, x, y));
     }
 
     @Test
     public void testSolveMaze() {
         Coordinate start = new Coordinate(0, 0);
-        Coordinate end = new Coordinate(3, 3);
+        Coordinate end = new Coordinate(2, 2);
         MazeSolverImpl.solveMaze(smallWriteupMaze, start, end);
+    }
+
+    @Test
+    public void solveOneSolutionPath() {
+        Coordinate x = new Coordinate(4, 0);
+        Coordinate y = new Coordinate(0, 1);
+        int[][] path = new int[9][9];
+
+        int[][] maze = {
+                {1, 1, 1, 1, 0, 0, 0, 1, 1},
+                {0, 1, 0, 1, 1, 0, 0, 0, 0},
+                {0, 0, 1, 1, 0, 0, 0, 1, 0},
+                {1, 0, 1, 0, 0, 0, 1, 1, 1},
+                {1, 0, 1, 1, 1, 0, 1, 0, 1},
+                {0, 0, 1, 0, 0, 0, 0, 1, 1},
+                {0, 0, 1, 1, 1, 0, 1, 1, 1},
+                {0, 1, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 1, 1, 1, 1, 1}
+        };
+        int[][] solution = {
+                {0, 0, 0, 0, 1, 1, 0, 0, 0},
+                {1, 0, 0, 0, 0, 1, 0, 0, 0},
+                {1, 1, 0, 0, 0, 1, 0, 0, 0},
+                {0, 1, 0, 0, 0, 1, 0, 0, 0},
+                {0, 1, 0, 0, 0, 1, 0, 0, 0},
+                {1, 1, 0, 0, 0, 1, 0, 0, 0},
+                {1, 0, 0, 0, 0, 1, 0, 0, 0},
+                {1, 0, 0, 1, 1, 1, 0, 0, 0},
+                {1, 1, 1, 1, 0, 0, 0, 0, 0}
+        };
+        assertTrue(MazeSolverImpl.findSolution(maze, x, y, path));
+        assertArrayEquals(path, solution);
+    }
+
+    @Test
+    public void longMaze() {
+        Coordinate x = new Coordinate(0, 1);
+        Coordinate y = new Coordinate(7, 0);
+
+        int[][] maze = {
+                {1, 1, 0, 0, 0, 1, 1, 0},
+                {0, 0, 0, 1, 0, 0, 0, 0}
+        };
+
+    int[][] solution = {
+            {0, 0, 1, 1, 1, 0, 0, 1},
+            {1, 1, 1, 0, 1, 1, 1, 1}
+        };
+
+    assertArrayEquals(MazeSolverImpl.solveMaze(maze, x, y), solution);
+    }
+
+    @Test
+    public void testMediumMaze() {
+        Coordinate x = new Coordinate(1, 0);
+        Coordinate y = new Coordinate(0, 7);
+
+        int[][] solution = {
+                {0, 1, 0, 0},
+                {0, 1, 1, 0},
+                {0, 0, 1, 0},
+                {0, 0, 1, 0},
+                {0, 1, 1, 0},
+                {0, 1, 0, 0},
+                {1, 1, 0, 0},
+                {1, 0, 0, 0}
+        };
+        assertArrayEquals(MazeSolverImpl.solveMaze(mediumMaze, x, y), solution);
+    }
+
+    @Test
+    public void testInEfficientSolution() {
+        Coordinate x = new Coordinate(4, 0);
+        Coordinate y = new Coordinate(0, 0);
+
+        int[][] path = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0}
+        };
+
+        int[][] maze = {
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0}
+        };
+
+        int[][] solution = {
+                {1, 1, 1, 1, 1},
+                {0, 1, 1, 1, 1},
+                {0, 1, 1, 1, 1},
+                {0, 1, 1, 1, 1},
+                {0, 1, 1, 1, 1}
+        };
+
+        assertTrue(MazeSolverImpl.findSolution(maze, x, y, path));
+        assertArrayEquals(path, solution);
     }
 }

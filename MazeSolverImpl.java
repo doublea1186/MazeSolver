@@ -21,57 +21,80 @@ public class MazeSolverImpl {
      * 4. If your source or goal coordinate are on a blocked tile.
      */
     public static int[][] solveMaze(int[][] maze, Coordinate sourceCoord, Coordinate goalCoord) {
-        // TODO: implements
 
-        if (!checkExceptions(maze, sourceCoord) && !checkExceptions(maze, goalCoord)) {
-            System.out.println(checkExceptions(maze, goalCoord));
-            // throw new IllegalArgumentException();
+        if (!checkExceptions(maze, sourceCoord) || !checkExceptions(maze, goalCoord)) {
+            throw new IllegalArgumentException();
         } else {
-            int rows = maze[0].length;
-            int columns = maze.length;
+            int rows = maze.length;
+            int columns = maze[0].length;
             int[][] solution = new int[rows][columns];
 
             if (findSolution(maze, sourceCoord, goalCoord, solution)) {
-
+                return solution;
             }
         }
 
         return null;
     }
 
-    public static boolean findSolution(int[][] maze, Coordinate current, Coordinate end, int[][] path) {
-        path[current.getY()][current.getX()] = 1;
+    public static boolean findSolution(int[][] maze, Coordinate current,
+                                       Coordinate end, int[][] path) {
+        int y = current.getY();
+        int x = current.getX();
+        path[y][x] = 1;
+        maze[y][x] = 1;
+        Coordinate down = increment(current, 0, -1);
+        Coordinate up = increment(current, 0, 1);
+        Coordinate left = increment(current, -1, 0);
+        Coordinate right = increment(current, 1, 0);
+
         if (current.equals(end)) {
             return true;
-        } else if (withinBounds(maze, increment(current, 0, -1))) {
-
-        } else if (withinBounds(maze, increment(current, 0, 1))) {
-
-        } else if (withinBounds(maze, increment(current, -1, 0))) {
-
-        } else if (withinBounds(maze, increment(current, 1, 0))) {
-
         }
-            return false;
+        if (checkExceptions(maze, down) && !isVisited(maze, down)) {
+            if (findSolution(maze, down, end, path)) {
+                return true;
+            }
+        }
+        if (checkExceptions(maze, up) && !isVisited(maze, up)) {
+            if (findSolution(maze, up, end, path)) {
+                return true;
+            }
+        }
+        if (checkExceptions(maze, left) && !isVisited(maze, left)) {
+            if (findSolution(maze, left, end, path)) {
+                return true;
+            }
+        }
+        if (checkExceptions(maze, right) && !isVisited(maze, right)) {
+            if (findSolution(maze, right, end, path)) {
+                return true;
+            }
+        }
+
+        path[y][x] = 0;
+        return false;
     }
 
-    public static boolean checkExceptions(int[][] maze, Coordinate x) {
-
-        if (maze == null || maze[0].length * maze.length <= 1 || !withinBounds(maze, x)) {
-            return false;
-        }
-
-        return true;
+    public static boolean isVisited(int[][] maze, Coordinate x) {
+        return maze[x.getY()][x.getX()] == 1;
     }
 
-    public static boolean withinBounds(int[][] maze, Coordinate point) {
+    public static boolean checkExceptions(int[][] maze, Coordinate point) {
         int x = point.getX();
         int y = point.getY();
 
-        return x >= 0 && y >= 0 && maze[0].length >= y && maze.length >= x && maze[y][x] != 1;
+        if (x >= 0 && y >= 0 && maze != null && maze.length > 0 && maze[0].length > 0
+                && maze.length * maze[0].length > 1 && maze.length - 1 >= y &&
+                maze[0].length - 1 >= x && maze[y][x] != 1) {
+
+            return true;
+        }
+        return false;
     }
 
     public static Coordinate increment(Coordinate point, int x, int y) {
         return new Coordinate(point.getX() + x, point.getY() + y);
     }
+
 }
