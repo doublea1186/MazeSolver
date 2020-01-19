@@ -29,7 +29,7 @@ public class MazeSolverImpl {
             int rows = maze.length;
             int columns = maze[0].length;
             int[][] solution = new int[rows][columns];
-            System.out.println("X Coordinate:" + sourceCoord.getX() + "\n Y Coordinate: " + sourceCoord.getY());
+
             if (findSolution(maze, sourceCoord, goalCoord, solution)) {
                 return solution;
             }
@@ -49,33 +49,28 @@ public class MazeSolverImpl {
         Coordinate right = increment(current, 1, 0);
 
         if (current.equals(end)) {
-            System.out.println("X Coordinate:" + x + "\n Y Coordinate: " + y);
             return true;
         }
         if (checkExceptions(maze, down) && !isVisited(maze, down)) {
             maze[y][x] = 1;
-            System.out.println(down);
             if (findSolution(maze, down, end, path)) {
                 return true;
             }
         }
         if (checkExceptions(maze, up) && !isVisited(maze, up)) {
             maze[y][x] = 1;
-            System.out.println(up);
             if (findSolution(maze, up, end, path)) {
                 return true;
             }
         }
         if (checkExceptions(maze, left) && !isVisited(maze, left)) {
             maze[y][x] = 1;
-            System.out.println(left);
             if (findSolution(maze, left, end, path)) {
                 return true;
             }
         }
         if (checkExceptions(maze, right) && !isVisited(maze, right)) {
             maze[y][x] = 1;
-            System.out.println(right);
             if (findSolution(maze, right, end, path)) {
                 return true;
             }
@@ -92,7 +87,7 @@ public class MazeSolverImpl {
     public static boolean checkExceptions(int[][] maze, Coordinate point) {
         int x = point.getX();
         int y = point.getY();
-        // System.out.println(Arrays.deepToString(maze).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
+
         if (x >= 0 && y >= 0 && maze != null && maze.length > 0 && maze[0].length > 0
                 && maze.length * maze[0].length > 1 && maze.length - 1 >= y &&
                 maze[0].length - 1 >= x && maze[y][x] != 1) {
