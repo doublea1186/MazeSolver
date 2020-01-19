@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6df1af0d-7ad8-48e0-9a38-f7c401d3f6b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MazeSolverImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MazeSolverImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MazeSolverImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MazeSolverImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw0-stub-files/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw0-stub-files/.idea/checkstyle-idea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw0-stub-files/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw0-stub-files/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw0-stub-files/MazeSolverImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw0-stub-files/MazeSolverImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw0-stub-files/MazeSolverImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw0-stub-files/MazeSolverImplTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +59,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="JUnit.MazeSolverImplTest.testXInBound">
+  <component name="RunManager" selected="JUnit.MazeSolverImplTest">
     <configuration name="MazeSolverVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MazeSolverVisualizer" />
       <module name="hw0-stub-files" />
@@ -90,31 +87,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MazeSolverImplTest.solveOneSolutionPath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MazeSolverImplTest.bigMaze" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw0-stub-files" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MazeSolverImplTest" />
-      <option name="METHOD_NAME" value="solveOneSolutionPath" />
+      <option name="METHOD_NAME" value="bigMaze" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MazeSolverImplTest.testInEfficientSolution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MazeSolverImplTest.longMaze" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw0-stub-files" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MazeSolverImplTest" />
-      <option name="METHOD_NAME" value="testInEfficientSolution" />
+      <option name="METHOD_NAME" value="longMaze" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MazeSolverImplTest.testXInBound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MazeSolverImplTest.testMediumMaze" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw0-stub-files" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MazeSolverImplTest" />
-      <option name="METHOD_NAME" value="testXInBound" />
+      <option name="METHOD_NAME" value="testMediumMaze" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -124,17 +121,17 @@
       <item itemvalue="Application.MazeSolverVisualizer" />
       <item itemvalue="JUnit.Generate Tests" />
       <item itemvalue="JUnit.MazeSolverImplTest" />
-      <item itemvalue="JUnit.MazeSolverImplTest.solveOneSolutionPath" />
-      <item itemvalue="JUnit.MazeSolverImplTest.testInEfficientSolution" />
-      <item itemvalue="JUnit.MazeSolverImplTest.testXInBound" />
+      <item itemvalue="JUnit.MazeSolverImplTest.testMediumMaze" />
+      <item itemvalue="JUnit.MazeSolverImplTest.longMaze" />
+      <item itemvalue="JUnit.MazeSolverImplTest.bigMaze" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MazeSolverImplTest.testXInBound" />
         <item itemvalue="JUnit.MazeSolverImplTest" />
-        <item itemvalue="JUnit.MazeSolverImplTest.testInEfficientSolution" />
-        <item itemvalue="JUnit.MazeSolverImplTest.solveOneSolutionPath" />
+        <item itemvalue="JUnit.MazeSolverImplTest.bigMaze" />
         <item itemvalue="Application.MazeSolverVisualizer" />
+        <item itemvalue="JUnit.MazeSolverImplTest.longMaze" />
+        <item itemvalue="JUnit.MazeSolverImplTest.testMediumMaze" />
       </list>
     </recent_temporary>
   </component>
@@ -167,6 +164,9 @@
       <workItem from="1579237973870" duration="1719000" />
       <workItem from="1579241323762" duration="3856000" />
       <workItem from="1579282266444" duration="1606000" />
+      <workItem from="1579284014638" duration="8808000" />
+      <workItem from="1579408540392" duration="699000" />
+      <workItem from="1579409288903" duration="288000" />
     </task>
     <servers />
   </component>
@@ -202,10 +202,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="305" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579238268775" />
-    <state x="850" y="326" key="FileChooserDialogImpl" timestamp="1579241832659">
+    <state x="850" y="326" key="FileChooserDialogImpl" timestamp="1579314884091">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="850" y="326" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579241832659" />
+    <state x="850" y="326" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579314884091" />
     <state x="936" y="478" key="Github.ShareDialog" timestamp="1579155721298">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -214,22 +214,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="834" y="290" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579155725205" />
-    <state width="1340" height="281" key="GridCell.Tab.0.bottom" timestamp="1579283857554">
+    <state width="1340" height="281" key="GridCell.Tab.0.bottom" timestamp="1579409239193">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579283857554" />
-    <state width="1340" height="281" key="GridCell.Tab.0.center" timestamp="1579283857554">
+    <state width="1340" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579409239193" />
+    <state width="1340" height="281" key="GridCell.Tab.0.center" timestamp="1579409239192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579283857554" />
-    <state width="1340" height="281" key="GridCell.Tab.0.left" timestamp="1579283857554">
+    <state width="1340" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579409239192" />
+    <state width="1340" height="281" key="GridCell.Tab.0.left" timestamp="1579409239192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579283857554" />
-    <state width="1340" height="281" key="GridCell.Tab.0.right" timestamp="1579283857554">
+    <state width="1340" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579409239192" />
+    <state width="1340" height="281" key="GridCell.Tab.0.right" timestamp="1579409239192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579283857554" />
+    <state width="1340" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579409239192" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1579229471081">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -250,6 +250,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="256" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579238066723" />
+    <state x="805" y="254" key="NewModule_or_Project.wizard" timestamp="1579297799737">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="805" y="254" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1579297799737" />
     <state x="370" y="300" key="SettingsEditor" timestamp="1579237940424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -266,6 +270,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="287" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579244311760" />
+    <state x="522" y="176" key="new project wizard" timestamp="1579297763262">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="522" y="176" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1579297763262" />
+    <state x="719" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1579408876649">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="719" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579408876649" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -274,7 +286,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/hw0_stub_files$MazeSolverVisualizer.ic" NAME="MazeSolverVisualizer Coverage Results" MODIFIED="1579234759088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/hw0_stub_files$MazeSolverImplTest_testSolveMaze.ic" NAME="MazeSolverImplTest.testSolveMaze Coverage Results" MODIFIED="1579238309617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/hw0_stub_files$MazeSolverImplTest.ic" NAME="MazeSolverImplTest Coverage Results" MODIFIED="1579283841418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/hw0_stub_files$MazeSolverImplTest.ic" NAME="MazeSolverImplTest Coverage Results" MODIFIED="1579297659486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/hw0_stub_files$MazeSolverImplTest_testReturnsBigMazeSolutionPathInWriteup.ic" NAME="MazeSolverImplTest.testReturnsBigMazeSolutionPathInWriteup Coverage Results" MODIFIED="1579234775464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/hw0_stub_files$MazeSolverImplTest_runAll.ic" NAME="MazeSolverImplTest.runAll Coverage Results" MODIFIED="1579240570145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>

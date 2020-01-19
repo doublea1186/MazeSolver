@@ -57,7 +57,6 @@ public class MazeSolverImplTest {
                 {1, 0, 0, 0, 0, 1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
         };
-
     }
 
     @Test
@@ -139,7 +138,7 @@ public class MazeSolverImplTest {
         int[][] empty = new int[4][4];
         Coordinate x = new Coordinate(3, 3);
         Coordinate y = new Coordinate(0, 0);
-
+        MazeSolverImpl.solveMaze(openMaze, x, y);
         assertFalse(MazeSolverImpl.findSolution(smallWriteupMaze, x, y, empty));
         assertFalse(MazeSolverImpl.findSolution(smallWriteupMaze, y, x, empty));
     }
@@ -281,12 +280,35 @@ public class MazeSolverImplTest {
                 {0, 0, 0, 1, 0, 0, 0, 0}
         };
 
-    int[][] solution = {
+        int[][] solution = {
             {0, 0, 1, 1, 1, 0, 0, 1},
             {1, 1, 1, 0, 1, 1, 1, 1}
         };
 
-    assertArrayEquals(MazeSolverImpl.solveMaze(maze, x, y), solution);
+        assertArrayEquals(MazeSolverImpl.solveMaze(maze, x, y), solution);
+    }
+
+    @Test
+    public void bigMaze() {
+        Coordinate x = new Coordinate(0, 1);
+        Coordinate y = new Coordinate(8, 4);
+
+        int[][] maze = {
+                {1, 1, 1, 1, 0, 0, 0, 1, 1},
+                {0, 1, 0, 0, 0, 1, 0, 0, 0},
+                {0, 0, 0, 1, 1, 0, 1, 1, 0},
+                {0, 1, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 1, 1, 1, 1, 1, 0}
+        };
+        int[][] solution = {
+                {0, 0, 0, 0, 1, 1, 1, 0, 0},
+                {1, 0, 1, 1, 1, 0, 1, 1, 1},
+                {1, 0, 1, 0, 0, 0, 0, 0, 1},
+                {1, 0, 1, 0, 0, 0, 0, 0, 1},
+                {1, 1, 1, 0, 0, 0, 0, 0, 1}
+        };
+
+        assertArrayEquals(MazeSolverImpl.solveMaze(maze, x, y), solution);
     }
 
     @Test
@@ -339,4 +361,5 @@ public class MazeSolverImplTest {
         assertTrue(MazeSolverImpl.findSolution(maze, x, y, path));
         assertArrayEquals(path, solution);
     }
+
 }
